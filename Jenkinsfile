@@ -1,6 +1,6 @@
 node {
         stage('Checkout') {
-            git url: 'https://github.com/Vaibhav1383/ProjectWeek1.git',  branch: 'master'
+            git url: 'https://github.com/KMR19/my-app.git',  branch: 'master'
             echo '****************CHECKOUT SUCCESSFUL****************'
         }
        
@@ -8,7 +8,7 @@ node {
        
 			
 	stage('Build') {
-		def mvn_version = 'MAVEN_HOME'
+		def mvn_version = 'soapui_maven'
 		withEnv( ["PATH+MAVEN=${tool mvn_version}/bin"]) {
 			sh 'mvn site'
 			}
